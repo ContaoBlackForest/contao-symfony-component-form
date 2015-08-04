@@ -1,0 +1,63 @@
+{
+    "name": "contaoblackforest/contao-symfony-component-form",
+    "description": "Symfony Form integration for Contao CMS",
+    "keywords": [
+        "contao",
+        "module",
+        "calendar",
+        "filter"
+    ],
+    "type": "contao-module",
+    "require": {
+        "php": ">=5.3",
+        "contao/core": "~3.2",
+        "contao-community-alliance/composer-plugin": "~2.0",
+        "contao-community-alliance/event-dispatcher": "~1.0",
+        "contao-community-alliance/contao-twig": "~1.0",
+        "symfony/form": "~2.0",
+        "symfony/validator": "~2.0",
+        "symfony/translation": "~2.0",
+        "symfony/config": "~2.0",
+        "symfony/twig-bridge": "~2.0",
+        "symfony/yaml": "~2.0",
+        "twig/extensions": "~1.0",
+        "symfony/security": "~2.0"
+    },
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Sven Baumann",
+            "email": "baumann.sv@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Dominik Tomasi",
+            "email": "dominik.tomasi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ContaoBlackForest/contao-symfony-component-form/issues",
+        "source": "https://github.com/ContaoBlackForest/contao-symfony-component-form"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpunit/phpunit": "~3.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "Contao\\Symfony\\Component\\Form\\": "src"
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "contao": "system/modules/calendar-filter"
+            }
+        },
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
+        }
+    }
+}
