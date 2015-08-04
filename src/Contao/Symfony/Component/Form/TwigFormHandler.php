@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Contao News translation
+ * Contao Symfony Component Form
  * Copyright (C) 2015 ContaoBlackForest
  *
  * PHP version 5
  *
- * @package   contaoblackforest/contao-news-translate
+ * @package   contaoblackforest/contao-symfony-component-form
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Dominik Tomasi <dominik.tomasi@gmail.com>
  * @license   LGPL-3.0+
  * @copyright ContaoBlackforest 2015
  */
 
-namespace ContaoBlackForest\Twig\Contao;
+namespace Contao\Symfony\Component\Form;
 
 use Contao\RequestToken;
-use ContaoBlackForest\Twig\Contao\Security\ContaoCsrfProvider;
-use ContaoBlackForest\Twig\Contao\Translator\Translator;
+use Contao\Symfony\Component\Form\Security\ContaoCsrfProvider;
+use Contao\Symfony\Component\Form\Translator\Translator;
 use Symfony\Bridge\Twig\Extension\FormExtension;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Bridge\Twig\Form\TwigRenderer;

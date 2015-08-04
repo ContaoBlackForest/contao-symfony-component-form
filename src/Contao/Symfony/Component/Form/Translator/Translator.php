@@ -1,24 +1,28 @@
 <?php
 
 /**
- * Contao News translation
+ * Contao Symfony Component Form
  * Copyright (C) 2015 ContaoBlackForest
  *
  * PHP version 5
  *
- * @package   contaoblackforest/contao-news-translate
+ * @package   contaoblackforest/contao-symfony-component-form
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Dominik Tomasi <dominik.tomasi@gmail.com>
  * @license   LGPL-3.0+
  * @copyright ContaoBlackforest 2015
  */
 
-namespace ContaoBlackForest\Twig\Contao\Translator;
-
+namespace Contao\Symfony\Component\Form\Translator;
 
 use Symfony\Component\Translation\Loader\XliffFileLoader;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 
+/**
+ * class Translator
+ *
+ * load the translation source for the form templates
+ */
 class Translator extends \Symfony\Component\Translation\Translator
 {
     public function __construct(array $config)
@@ -30,7 +34,7 @@ class Translator extends \Symfony\Component\Translation\Translator
         $this->setFallbackLocales(array('en'));
     }
 
-    protected function issetLoader(array $loaders)
+    protected function isLoaderDefined(array $loaders)
     {
         foreach ($loaders as $loader) {
             if (!array_key_exists($loader, $this->getLoaders())) {
@@ -51,7 +55,7 @@ class Translator extends \Symfony\Component\Translation\Translator
 
     public function addStandardValidatorResource()
     {
-        $this->issetLoader(array('xlf'));
+        $this->istLoaderDefined(array('xlf'));
 
         foreach ($this->getFallbackLocales() as $fallback) {
             if (file_exists($path = realpath($this->config['vendorValidatorDir'] . '/Resources/translations/validators.' . $fallback . '.xlf'))) {

@@ -1,21 +1,19 @@
 <?php
 
 /**
- * Contao News translation
+ * Contao Symfony Component Form
  * Copyright (C) 2015 ContaoBlackForest
  *
  * PHP version 5
  *
- * @package   contaoblackforest/contao-news-translate
+ * @package   contaoblackforest/contao-symfony-component-form
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Dominik Tomasi <dominik.tomasi@gmail.com>
  * @license   LGPL-3.0+
  * @copyright ContaoBlackforest 2015
  */
 
-
-namespace ContaoBlackForest\Twig\Contao\Form;
-
+namespace Contao\Symfony\Component\Form;
 
 class FormBuilder extends FormFactoryBuilder
 {

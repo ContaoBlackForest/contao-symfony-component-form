@@ -1,24 +1,28 @@
 <?php
 
 /**
- * Contao News translation
+ * Contao Symfony Component Form
  * Copyright (C) 2015 ContaoBlackForest
  *
  * PHP version 5
  *
- * @package   contaoblackforest/contao-news-translate
+ * @package   contaoblackforest/contao-symfony-component-form
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Dominik Tomasi <dominik.tomasi@gmail.com>
  * @license   LGPL-3.0+
  * @copyright ContaoBlackforest 2015
  */
 
-namespace ContaoBlackForest\Twig\Contao\Security;
+namespace Contao\Symfony\Component\Form\Security;
 
 use Contao\RequestToken;
 use Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\DefaultCsrfProvider;
 
+/**
+ * class ContaoCsrfProvider
+ *
+ * CSRF provider class for Contao
+ */
 class ContaoCsrfProvider implements CsrfProviderInterface
 {
     protected $token;
@@ -46,7 +50,7 @@ class ContaoCsrfProvider implements CsrfProviderInterface
      * Validates a CSRF token.
      *
      * @param string $intention The intention used when generating the CSRF token
-     * @param string $token The token supplied by the browser
+     * @param string $token     The token supplied by the browser
      *
      * @return bool Whether the token supplied by the browser is correct
      */
