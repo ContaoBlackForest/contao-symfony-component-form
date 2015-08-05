@@ -27,7 +27,7 @@ class ContaoFormBuilder extends FormBuilder
     private function setDefaults()
     {
         return array(
-            'csrf_field_name' => 'REQUEST_TOKEN',
+            'csrf_protection' => false,
         );
     }
 
