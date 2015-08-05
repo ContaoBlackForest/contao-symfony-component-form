@@ -55,7 +55,7 @@ class Translator extends \Symfony\Component\Translation\Translator
 
     public function addStandardValidatorResource()
     {
-        $this->istLoaderDefined(array('xlf'));
+        $this->isLoaderDefined(array('xlf'));
 
         foreach ($this->getFallbackLocales() as $fallback) {
             if (file_exists($path = realpath($this->config['vendorValidatorDir'] . '/Resources/translations/validators.' . $fallback . '.xlf'))) {
