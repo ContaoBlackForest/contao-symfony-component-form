@@ -51,11 +51,6 @@
         }
     },
     "extra": {
-        "contao": {
-            "sources": {
-                "contao": "system/modules/calendar-filter"
-            }
-        },
         "branch-alias": {
             "dev-develop": "1.0.x-dev"
         }
