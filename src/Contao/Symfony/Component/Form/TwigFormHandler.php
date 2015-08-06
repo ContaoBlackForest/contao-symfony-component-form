@@ -91,7 +91,7 @@ class TwigFormHandler
         $formEngine = new TwigRendererEngine(array($this->defaultFormTheme));
         $formEngine->setEnvironment($this->getTwig()->getEnvironment());
 
-        $this->getTwig()->getEnvironment()->addExtension(new FormExtension(new TwigRenderer($formEngine, $this->csrfProvider)));
+        $this->getTwig()->getEnvironment()->addExtension(new FormExtension(new TwigRenderer($formEngine)));
     }
 
     /**
