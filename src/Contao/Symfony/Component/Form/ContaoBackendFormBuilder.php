@@ -36,6 +36,6 @@ class ContaoBackendFormBuilder extends FormBuilder
 
     private function setBuilder()
     {
-        $this->builder = $this->getFactory()->createNamedBuilder('', 'form', array(), $this->setDefaults());
+        $this->builder = $this->getFactory()->createNamedBuilder('', 'form', $this->setDefaults());
     }
 }

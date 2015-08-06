@@ -15,6 +15,11 @@
 
 namespace Contao\Symfony\Component\Form;
 
+/**
+ * Class ContaoFormBuilder
+ *
+ * @package Contao\Symfony\Component\Form
+ */
 class ContaoFormBuilder extends FormBuilder
 {
     public function __construct()
@@ -33,6 +38,6 @@ class ContaoFormBuilder extends FormBuilder
 
     private function setBuilder()
     {
-        $this->builder = $this->getFactory()->createBuilder('form', null, $this->setDefaults());
+        $this->builder = $this->getFactory()->createBuilder('form', $this->setDefaults());
     }
 }
