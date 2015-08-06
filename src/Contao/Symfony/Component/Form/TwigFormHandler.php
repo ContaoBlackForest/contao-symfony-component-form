@@ -16,7 +16,6 @@
 namespace Contao\Symfony\Component\Form;
 
 use Contao\RequestToken;
-use Contao\Symfony\Component\Form\Security\ContaoCsrfProvider;
 use Contao\Symfony\Component\Form\Translator\Translator;
 use Symfony\Bridge\Twig\Extension\FormExtension;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
@@ -31,14 +30,11 @@ class TwigFormHandler
     /** @var  \ContaoTwig */
     protected $twig;
 
-    protected $csrfProvider;
-
     protected $validator;
 
     public function __construct()
     {
         $this->setConfig();
-        $this->setCsrfProvider();
         $this->setValidator();
         $this->setTwig();
         $this->setTranslatorToTwig();
@@ -59,18 +55,12 @@ class TwigFormHandler
         $vendorDir = realpath(TL_ROOT . '/composer/vendor');
 
         $this->config = array(
-            'csrfSecret' => RequestToken::get(),
-            'defaultFormTheme' => 'form_div_layout.html.twig',
-            'vendorDir' => $vendorDir,
-            'vendorFormDir' => $vendorDir . '/symfony/form',
-            'vendorValidatorDir' => $vendorDir . '/symfony/validator',
+            'defaultFormTheme'    => 'form_div_layout.html.twig',
+            'vendorDir'           => $vendorDir,
+            'vendorFormDir'       => $vendorDir . '/symfony/form',
+            'vendorValidatorDir'  => $vendorDir . '/symfony/validator',
             'vendorTwigBridgeDir' => $vendorDir . '/symfony/twig-bridge',
         );
-    }
-
-    private function setCsrfProvider()
-    {
-        $this->csrfProvider = new ContaoCsrfProvider();
     }
 
     private function setValidator()
@@ -101,15 +91,7 @@ class TwigFormHandler
         $formEngine = new TwigRendererEngine(array($this->defaultFormTheme));
         $formEngine->setEnvironment($this->getTwig()->getEnvironment());
 
-        $this->getTwig()->getEnvironment()->addExtension(new FormExtension(new TwigRenderer($formEngine, $this->csrfProvider)));
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCsrfProvider()
-    {
-        return $this->csrfProvider;
+        $this->getTwig()->getEnvironment()->addExtension(new FormExtension(new TwigRenderer($formEngine)));
     }
 
     /**

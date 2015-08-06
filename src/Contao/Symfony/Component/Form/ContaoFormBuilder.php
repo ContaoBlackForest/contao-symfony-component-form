@@ -15,6 +15,11 @@
 
 namespace Contao\Symfony\Component\Form;
 
+/**
+ * Class ContaoFormBuilder
+ *
+ * @package Contao\Symfony\Component\Form
+ */
 class ContaoFormBuilder extends FormBuilder
 {
     public function __construct()
@@ -22,17 +27,18 @@ class ContaoFormBuilder extends FormBuilder
         parent::__construct();
 
         $this->setBuilder();
+        $this->setRequestToken();
     }
 
     private function setDefaults()
     {
         return array(
-            'csrf_field_name' => 'REQUEST_TOKEN',
+            'csrf_protection' => false,
         );
     }
 
     private function setBuilder()
     {
-        $this->builder = $this->getFactory()->createBuilder('form', null, $this->setDefaults());
+        $this->builder = $this->getFactory()->createNamedBuilder('', 'form', $this->setDefaults());
     }
 }

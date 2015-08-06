@@ -15,7 +15,6 @@
 
 namespace Contao\Symfony\Component\Form;
 
-use Symfony\Component\Form\Extension\Csrf\CsrfExtension;
 use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\Forms;
 
@@ -36,7 +35,6 @@ class FormFactoryBuilder
     {
         $this->getTwigFormHandler();
         $this->setFactory();
-        $this->addCsrfProvider();
         $this->addValidator();
         $this->getFormFactory();
     }
@@ -49,11 +47,6 @@ class FormFactoryBuilder
     private function setFactory()
     {
         $this->formBuilder = Forms::createFormFactoryBuilder();
-    }
-
-    private function addCsrfProvider()
-    {
-        $this->getFormBuilder()->addExtension(new CsrfExtension($this->formHandler->getCsrfProvider()));
     }
 
     private function addValidator()
