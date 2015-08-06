@@ -27,6 +27,7 @@ class ContaoFormBuilder extends FormBuilder
         parent::__construct();
 
         $this->setBuilder();
+        $this->setRequestToken();
     }
 
     private function setDefaults()
@@ -38,6 +39,6 @@ class ContaoFormBuilder extends FormBuilder
 
     private function setBuilder()
     {
-        $this->builder = $this->getFactory()->createBuilder('form', $this->setDefaults());
+        $this->builder = $this->getFactory()->createNamedBuilder('', 'form', $this->setDefaults());
     }
 }
