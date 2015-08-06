@@ -51,6 +51,11 @@
         }
     },
     "extra": {
+        "contao": {
+            "sources": {
+                "contao": "system/modules/symfony-component-form"
+            }
+        },
         "branch-alias": {
             "dev-develop": "1.0.x-dev"
         }
