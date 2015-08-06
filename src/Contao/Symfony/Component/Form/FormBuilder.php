@@ -38,7 +38,10 @@ class FormBuilder extends FormFactoryBuilder
         if (!\Config::get('disableRefererCheck')) {
             $token = \RequestToken::get();
 
-            $this->builder->add('REQUEST_TOKEN', 'hidden', array(
+            $this->builder->add(
+                'REQUEST_TOKEN',
+                'hidden',
+                array(
                     'data' => $token,
                 )
             );

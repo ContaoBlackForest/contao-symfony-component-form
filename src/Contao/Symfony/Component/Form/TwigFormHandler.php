@@ -55,10 +55,10 @@ class TwigFormHandler
         $vendorDir = realpath(TL_ROOT . '/composer/vendor');
 
         $this->config = array(
-            'defaultFormTheme' => 'form_div_layout.html.twig',
-            'vendorDir' => $vendorDir,
-            'vendorFormDir' => $vendorDir . '/symfony/form',
-            'vendorValidatorDir' => $vendorDir . '/symfony/validator',
+            'defaultFormTheme'    => 'form_div_layout.html.twig',
+            'vendorDir'           => $vendorDir,
+            'vendorFormDir'       => $vendorDir . '/symfony/form',
+            'vendorValidatorDir'  => $vendorDir . '/symfony/validator',
             'vendorTwigBridgeDir' => $vendorDir . '/symfony/twig-bridge',
         );
     }
