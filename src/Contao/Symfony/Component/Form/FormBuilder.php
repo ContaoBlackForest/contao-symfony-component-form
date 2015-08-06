@@ -15,8 +15,6 @@
 
 namespace Contao\Symfony\Component\Form;
 
-use Contao\RequestToken;
-
 class FormBuilder extends FormFactoryBuilder
 {
     /** @var  \Symfony\Component\Form\FormBuilder $builder */
@@ -37,11 +35,13 @@ class FormBuilder extends FormFactoryBuilder
 
     protected function setRequestToken()
     {
-        $token = RequestToken::get();
         if (!\Config::get('disableRefererCheck')) {
+            $token = \RequestToken::get();
+
             $this->builder->add('REQUEST_TOKEN', 'hidden', array(
-                'data' => $token,
-            ));
+                    'data' => $token,
+                )
+            );
         }
     }
 
